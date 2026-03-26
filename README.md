@@ -103,6 +103,7 @@ These limitations are intentional and will be addressed in future iterations.
 - Add decision-oriented evaluation (directional accuracy, cost-aware metrics)
 - Add pipeline automation and reproducible deployment (Docker, CI)
 - Add benchmarking and performance analysis for training and inference
+- Future work includes Bayesian approaches for uncertainty estimation in time-series predictions.
 
 
 ## Installation
