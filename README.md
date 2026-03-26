@@ -1,18 +1,31 @@
-# Reproducible LSTM-Based Time Series Forecasting for Financial Index Data
+# Adaptive & Explainable Machine Learning for Time-Dependent Decision Systems
 
 ## Overview
-This repository provides a reproducible implementation of an LSTM-based time series forecasting pipeline. The project is structured as a research-style artifact, emphasizing reproducible ML systems, proper evaluation methodology, and robust experimentation practices. The goal is to demonstrate reliable ML system design rather than a specific domain application.
+This repository provides a reproducible machine learning pipeline for time-dependent data, with a focus on model reliability, explainability, and decision-aware evaluation.
 
-The artifact is based on a Master's project in Data Science, focusing on time-series forecasting using S&P 500 index data (1950–2022). The repository is designed as a systems-oriented research artifact for building reliable AI systems through reproducible pipelines and rigorous evaluation.
+While initially developed as an LSTM-based forecasting system, the project has evolved into a research-oriented framework for studying how machine learning models behave under temporal constraints, distribution shifts, and real-world deployment conditions.
+
+The goal is not only predictive performance, but also:
+- understanding model behavior over time
+- evaluating reliability under changing data distributions
+- enabling explainable and decision-aware modeling
+
+This work is positioned toward applications in real-world systems such as transportation, infrastructure, and other high-stakes environments where robustness and interpretability are critical.
 
 
-## Why This Matters (PhD/Research Context)
+## Why This Matters (Research Context)
 
-This repository is intended as a systems-oriented research artifact demonstrating:
-- reproducible ML pipelines and experiment tracking
-- leakage-free preprocessing and correct evaluation
-- evidence-based model validation with strong baselines
-- a foundation for  scalable AI systems and reliable deployment (baselines, uncertainty, regime shifts).
+Modern machine learning systems often achieve high accuracy in static settings but fail in real-world environments due to:
+- evolving data distributions (concept drift)
+- lack of interpretability
+- absence of uncertainty awareness
+
+This project investigates how to build machine learning systems that are:
+- reliable over time
+- explainable in their predictions
+- adaptable to changing environments
+
+These challenges are critical in domains such as transportation safety, operations, and infrastructure systems, where decisions must be both accurate and interpretable.
 
 ## Systems for AI Relevance
 This project aligns with systems-for-AI research because it focuses on building reproducible and reliable ML pipelines, including:
@@ -26,6 +39,17 @@ These system-level practices are critical for scalable AI systems, which require
 ## Research Scope & Intent
 This project intentionally focuses on **univariate time series forecasting** (using closing prices only)
 to study temporal dependency modeling with LSTM networks under realistic evaluation constraints.
+
+## Research Direction (Ongoing Work)
+
+This project is being extended toward:
+
+- Explainable AI (XAI): Understanding model predictions using feature attribution and interpretability methods
+- Uncertainty Modeling: Estimating confidence in predictions using probabilistic and approximate Bayesian techniques
+- Adaptive Systems: Studying how models behave under distribution shifts and evolving data
+- Decision-Aware Evaluation: Moving beyond RMSE to evaluate real-world decision impact
+
+The long-term goal is to develop adaptive machine learning systems that can support reliable decision-making in dynamic environments.
 
 The goal is not to propose a novel deep learning architecture, but to:
 - build a leakage-free and reproducible forecasting pipeline,
@@ -52,8 +76,11 @@ The goal is not to propose a novel deep learning architecture, but to:
 - Training: 5 epochs (expandable), batch size 32, on 80% train split.
 
 ### Evaluation
-- Metrics: Root Mean Squared Error (RMSE), visualization of actual vs. predicted.
-- Final Evaluation: Assess accuracy on test set, compare predictions with actual data, identify strengths/weaknesses (e.g., trend capture but volatility issues).
+- Metrics:
+  - Root Mean Squared Error (RMSE)
+  - Directional Accuracy (planned)
+  - Decision-aware evaluation metrics (planned)
+  - Final Evaluation: Assess accuracy on test set, compare predictions with actual data, identify strengths/weaknesses (e.g., trend capture but volatility issues).
 
 ### Key Notes
 - Leakage-free scaling (scaler fit on training data only).
@@ -70,6 +97,7 @@ These limitations are intentional and will be addressed in future iterations.
     
 ## Next Planned Improvements (Systems & AI)
 - Add baseline models (naive forecast, moving average, ARIMA)
+- Add explainability methods (e.g., SHAP, feature importance analysis)
 - Add walk-forward validation (rolling window) for robust evaluation
 - Add uncertainty estimation (e.g., Monte Carlo dropout)
 - Add decision-oriented evaluation (directional accuracy, cost-aware metrics)
